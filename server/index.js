@@ -1,5 +1,5 @@
 import express from 'express';
-import bodyParser from body-parser;
+import bodyParser from "body-parser";
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -16,10 +16,10 @@ dotenv.config();
 const app = express ()
 app.use(express.json())
 app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-orgin"}));
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin"}));
 app.use(morgan("common"))
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended:false}));
+app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cors());
 
 /* ROUTES */
@@ -27,3 +27,16 @@ app.use("/client", clientRoutes)
 app.use("/general", generalRoutes)
 app.use("/management", managementRoutes)
 app.use("/sales", salesRoutes)
+
+/* MONGOOSE SETUP */
+const PORT = process.env.PORT || 9000;
+const URL = "mongodb+srv://pdowhy:mongodb@cluster0.coxswyu.mongodb.net/?retryWrites=true&w=majority";
+mongoose
+    .connect(URL, {
+        useNEWURLParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => {
+        app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+    }).catch((error ) => console.log(`${error} did not connect`))
+
