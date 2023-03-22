@@ -30,7 +30,7 @@ app.use("/sales", salesRoutes)
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
-const URL = "mongodb+srv://pdowhy:mongodb@cluster0.coxswyu.mongodb.net/?retryWrites=true&w=majority";
+const URL = process.env.URL;
 mongoose
     .connect(URL, {
         useNEWURLParser: true,
@@ -39,4 +39,5 @@ mongoose
     .then(() => {
         app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     }).catch((error ) => console.log(`${error} did not connect`))
+
 
