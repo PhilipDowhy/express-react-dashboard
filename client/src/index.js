@@ -14,8 +14,8 @@ const store = configureStore({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provier store={store}>
-    <App />
-    </Provier>
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
