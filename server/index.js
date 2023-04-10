@@ -10,6 +10,9 @@ import generalRoutes from "./routes/general.js"
 import managementRoutes from "./routes/management.js"
 import salesRoutes from "./routes/sales.js"
 
+// data imports
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -30,7 +33,9 @@ app.use("/sales", salesRoutes)
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
-const URL = process.env.URL;
+//const URL = process.env.URL;
+const URL = 'mongodb+srv://pdowhy:mongodb@cluster0.coxswyu.mongodb.net/?retryWrites=true&w=majority'
+
 mongoose
     .connect(URL, {
         useNEWURLParser: true,
@@ -38,6 +43,9 @@ mongoose
     })
     .then(() => {
         app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+        /* ONLY ADD DATA ONE TIME */
+        //User.insertMany(dataUser);
     }).catch((error ) => console.log(`${error} did not connect`))
 
 
