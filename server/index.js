@@ -33,8 +33,8 @@ app.use("/sales", salesRoutes)
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
-//const URL = process.env.URL;
-const URL = 'mongodb+srv://pdowhy:mongodb@cluster0.coxswyu.mongodb.net/?retryWrites=true&w=majority'
+const URL = process.env.URL;
+
 
 mongoose
     .connect(URL, {
