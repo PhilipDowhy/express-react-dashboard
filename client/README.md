@@ -71,5 +71,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-1:28:05/7:00:32
+1:55:00/7:00:32
 
