@@ -11,17 +11,18 @@ import FlexBetween from "components/FlexBetween";
 import { useDispatch } from 'react-redux';
 import { setMode } from 'state';
 import profileImage from "assets/profile.jpeg";
-import { 
-        AppBar,
-        Button,
-        Box, 
-        IconButton, 
-        InputBase, 
-        Toolbar,
-        Typography,
-        Menu,
-        MenuItem, 
-        useTheme } from '@mui/material';
+import {
+    AppBar,
+    Button,
+    Box,
+    IconButton,
+    InputBase,
+    Toolbar,
+    Typography,
+    Menu,
+    MenuItem,
+    useTheme
+} from '@mui/material';
 
 const Navbar = ({
     user,
@@ -93,7 +94,7 @@ const Navbar = ({
                         />
                         <Box textAlign="left">
                             <Typography
-                                fontweight="bold"
+                                fontWeight="bold"
                                 fontSize="0.85rem"
                                 sx={{ color: theme.palette.secondary[100] }}>
                                 {user.name}
@@ -108,11 +109,11 @@ const Navbar = ({
                             sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
                         />
                     </Button>
-                    <Menu 
-                        anchorEl={anchorEl} 
-                        open={isOpen} 
-                        onClose={handleClose} 
-                        anchorOrigin={{ vertical: "bottom", horizontal: "center"}}
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={isOpen}
+                        onClose={handleClose}
+                        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
                     >
                         <MenuItem onClick={handleClose}> Log Out</MenuItem>
                     </Menu>
