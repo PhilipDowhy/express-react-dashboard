@@ -1,5 +1,5 @@
 import express from 'express';
-import bodyParser from "body-parser";
+import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -16,6 +16,7 @@ import { dataUser } from "./data/index.js";
 
 /* CONFIGURATION */
 dotenv.config();
+
 const app = express ()
 app.use(express.json())
 app.use(helmet());
@@ -42,7 +43,7 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() => {
-        app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+        app.listen(PORT, () => console.log(`Server Port: ${PORT}`)) ;
 
         /* ONLY ADD DATA ONE TIME */
         //User.insertMany(dataUser);
