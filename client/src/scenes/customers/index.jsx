@@ -75,7 +75,7 @@ function Customers() {
                         color: theme.palette.secondary[100],
                         borderTop: "none"
                     },
-                    "& .MuiDataGrid-toolebarContainer .MuiButton-text": {
+                    "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
                         color: `${theme.palette.secondary[200]} !important`
                     }               
                 }}
