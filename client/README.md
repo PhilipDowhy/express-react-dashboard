@@ -70,6 +70,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
+https://www.youtube.com/watch?app=desktop&v=0cPCMIuDk2I
 
-4:05:00/7:00:32
+4:27:00/7:00:32
 
